@@ -3,6 +3,5 @@ module Types
     
     field :products, resolver: Queries::Products
 
-    
   end
 end
