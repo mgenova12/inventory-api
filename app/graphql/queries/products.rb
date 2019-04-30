@@ -6,7 +6,7 @@ module Queries
     type [Types::ProductType], null: false
 
     def resolve
-      ::Product.all
+      Product.all
     end
 
   end

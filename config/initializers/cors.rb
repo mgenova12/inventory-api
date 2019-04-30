@@ -5,9 +5,9 @@
 
 # Read more: https://github.com/cyu/rack-cors
 
-Rails.application.config.middleware.insert_before 0, Rack::Cors do
-  allow do
-    origins '*' #replace this url with that of your own heroku client app
-    resource '*', :headers => :any, :methods => :any
-  end
-end
+# Rails.application.config.middleware.insert_before 0, Rack::Cors do
+#   allow do
+#     origins '*' #replace this url with that of your own heroku client app
+#     resource '*', :headers => :any, :methods => :any
+#   end
+# end
