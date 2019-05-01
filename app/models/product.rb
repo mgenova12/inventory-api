@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
   belongs_to :distributor
-  belongs_to :measurement
-  belongs_to :product_type
+  belongs_to :count_by
+  belongs_to :category
 end

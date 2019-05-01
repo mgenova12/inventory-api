@@ -3,11 +3,9 @@ module Types
     field :id, ID, null: true
     field :name, String, null: true
     field :distributor, DistributorType, null: true
-    field :measurement, MeasurementType, null: true
-    
-    # field :case_quantity, Integer, null: true
-    # field :price, Float, null: true
-    # field :amount_in_stock, Integer, null: true
-    # field :product_type, ProductTypeType, null: true
+    field :category, CategoryType, null: true
+    field :count_by, CountByType, null: true
+    field :case_quantity, Integer, null: true
+    field :price, Float, null: true
   end
 end
