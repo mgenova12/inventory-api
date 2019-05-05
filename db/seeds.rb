@@ -10,25 +10,28 @@
 # Distributor.create(name: 'Gordon')
 
 # Add Count By
-CountBy.create(name: '%')
-CountBy.create(name: 'EA')
-CountBy.create(name: 'BIN')
-CountBy.create(name: 'SLEEVE')
+# CountBy.create(name: '%')
+# CountBy.create(name: 'EA')
+# CountBy.create(name: 'BIN')
+# CountBy.create(name: 'SLEEVE')
 
 # Add Category
-Category.create(name: 'Dry')
-Category.create(name: 'Frozen')
-Category.create(name: 'Refrigerated')
+# Category.create(name: 'Dry')
+# Category.create(name: 'Frozen')
+# Category.create(name: 'Refrigerated')
 
 # Add Products
-20.times do 
-  Product.create(
-    name:Faker::Food.dish, 
-    count_by_id: rand(1..4), 
-    category_id: rand(1..3), 
-    case_quantity: rand(0..20),
-    price: rand(0.1...100.0).round(2), 
-    distributor_id: rand(1..4)
-  )
-end
+# 20.times do 
+#   Product.create(
+#     name:Faker::Food.dish, 
+#     count_by_id: rand(1..4), 
+#     category_id: rand(1..3), 
+#     case_quantity: rand(0..20),
+#     price: rand(0.1...100.0).round(2), 
+#     distributor_id: rand(1..4)
+#   )
+# end
+
+StoreType.create(name: 'Restaurant')
+StoreType.create(name: 'Prepcenter')
 
