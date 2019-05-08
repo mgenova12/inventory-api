@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190504182748) do
+ActiveRecord::Schema.define(version: 20190507214258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20190504182748) do
     t.integer  "count_by_id"
     t.integer  "category_id"
     t.boolean  "prepped"
+    t.integer  "mark_up"
   end
 
   create_table "store_types", force: :cascade do |t|

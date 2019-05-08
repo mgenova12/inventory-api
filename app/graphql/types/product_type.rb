@@ -7,5 +7,7 @@ module Types
     field :count_by, CountByType, null: true
     field :case_quantity, Integer, null: true
     field :price, Float, null: true
+    field :mark_up, Integer, null: true
+    field :prepped, Boolean, null: true
   end
 end
