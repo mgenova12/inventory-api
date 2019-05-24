@@ -2,7 +2,6 @@ class Mutations::EditProduct < Mutations::BaseMutation
   argument :id, Integer, required: true
   argument :name, String, required: true
   argument :distributor, String, required: true
-  argument :count_by, String, required: true
   argument :category, String, required: true
   argument :case_quantity, Integer, required: false
   argument :price, Float, required: true
@@ -12,16 +11,14 @@ class Mutations::EditProduct < Mutations::BaseMutation
   field :product, Types::ProductType, null: false
   field :errors, [String], null: false
 
-  def resolve(id:, name:, distributor:, count_by:, category:, case_quantity:, price:, mark_up:, prepped:)
+  def resolve(id:, name:, distributor:, category:, case_quantity:, price:, mark_up:, prepped:)
     product = Product.find(id)
     distributor_id = Distributor.find_by(name: distributor).id
     category_id = Category.find_by(name: category).id
-    count_by_id = CountBy.find_by(name: count_by).id
 
     if product.update(
       name: name,
       distributor_id: distributor_id, 
-      count_by_id: count_by_id,
       category_id: category_id ,
       case_quantity: case_quantity,
       price: price, 
