@@ -10,7 +10,7 @@ module Types
     field :prepped, Boolean, null: true
     field :barcode, Integer, null: true
     field :description, String, null: true
-    field :distributor_number, String, null: true
+    field :distributor_number, Integer, null: true
     field :brand, String, null: true
     field :unit_size, String, null: true
   end

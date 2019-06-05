@@ -20,6 +20,8 @@ gem 'puma', '~> 3.0'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'dotenv-rails'
 gem 'faker'
+gem 'carrierwave'
+gem 'carrierwave-base64'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -27,6 +29,7 @@ gem 'faker'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', :require => 'rack/cors'
 gem 'graphql'
+gem 'apollo_upload_server'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
