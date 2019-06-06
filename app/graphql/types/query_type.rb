@@ -7,5 +7,6 @@ module Types
     field :distributors, resolver: Queries::Distributors
     field :categories, resolver: Queries::Categories
     field :count_bies, resolver: Queries::CountBies
+    field :document_data, resolver: Queries::DocumentData
   end
 end

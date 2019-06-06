@@ -13,5 +13,6 @@ module Types
     field :distributor_number, Integer, null: true
     field :brand, String, null: true
     field :unit_size, String, null: true
+    field :documents, [DocumentDataType], null: true
   end
 end
