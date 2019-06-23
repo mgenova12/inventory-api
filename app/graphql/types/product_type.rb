@@ -14,5 +14,7 @@ module Types
     field :brand, String, null: true
     field :unit_size, String, null: true
     field :documents, [DocumentDataType], null: true
+    field :portion_size, Integer, null: true
+    field :marked_up_price, Integer, null: true
   end
 end

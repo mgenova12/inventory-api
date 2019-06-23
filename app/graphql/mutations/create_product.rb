@@ -12,11 +12,13 @@ class Mutations::CreateProduct < Mutations::BaseMutation
   argument :brand, String, required: false
   argument :unit_size, String, required: false
   argument :document_data, [String], required: false
+  argument :portion_size, Integer, required: false
+  argument :marked_up_price, Integer, required: false
 
   field :product, Types::ProductType, null: false
   field :errors, [String], null: false
 
-  def resolve(name:, distributor_id:, category_id:, case_quantity:, price:, mark_up:, prepped:, barcode:, description:, distributor_number:, brand:, unit_size:, document_data:)
+  def resolve(name:, distributor_id:, category_id:, case_quantity:, price:, mark_up:, prepped:, barcode:, description:, distributor_number:, brand:, unit_size:, document_data:, portion_size:, marked_up_price: )
     product = Product.new(
       name: name,
       distributor_id: distributor_id, 
@@ -30,6 +32,8 @@ class Mutations::CreateProduct < Mutations::BaseMutation
       distributor_number: distributor_number,
       brand: brand, 
       unit_size: unit_size,
+      portion_size: portion_size,
+      marked_up_price: marked_up_price
     )
     p '************************'
     p document_data
