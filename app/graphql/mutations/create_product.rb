@@ -1,9 +1,9 @@
 class Mutations::CreateProduct < Mutations::BaseMutation
   argument :name, String, required: true
-  argument :distributor_id, Integer, required: true
+  argument :distributor_id, Integer, required: false
   argument :category_id, Integer, required: true
   argument :case_quantity, Integer, required: false
-  argument :price, Float, required: true
+  argument :price, Float, required: false
   argument :mark_up, Integer, required: true
   argument :prepped, Boolean, required: false
   argument :barcode, Integer, required: false
@@ -35,12 +35,12 @@ class Mutations::CreateProduct < Mutations::BaseMutation
       portion_size: portion_size,
       marked_up_price: marked_up_price
     )
-    p '************************'
-    p document_data
-    p '************************'
+    
     if product.save
-      document_data.each do |document|
-        product.documents.create(:document => document)
+      if document_data.length > 0
+        document_data.each do |document|
+          product.documents.create(:document => document)
+        end
       end
       # Successful creation, return the created object with no errors
       {
