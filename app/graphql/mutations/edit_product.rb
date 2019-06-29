@@ -7,7 +7,7 @@ class Mutations::EditProduct < Mutations::BaseMutation
   argument :price, Float, required: true
   argument :mark_up, Integer, required: true
   argument :prepped, Boolean, required: false
-  argument :marked_up_price, Integer, required: false
+  argument :marked_up_price, Float, required: false
 
   field :product, Types::ProductType, null: false
   field :errors, [String], null: false

@@ -13,7 +13,7 @@ class Mutations::CreateProduct < Mutations::BaseMutation
   argument :unit_size, String, required: false
   argument :document_data, [String], required: false
   argument :portion_size, Integer, required: false
-  argument :marked_up_price, Integer, required: false
+  argument :marked_up_price, Float, required: false
 
   field :product, Types::ProductType, null: false
   field :errors, [String], null: false
