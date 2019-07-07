@@ -1,6 +1,7 @@
 module Types
   class QueryType < Types::BaseObject
     field :products, resolver: Queries::Products
+    field :prepped_products, resolver: Queries::PreppedProducts
     field :get_product, resolver: Queries::GetProduct
     field :stores, resolver: Queries::Stores
     field :store_types, resolver: Queries::StoreTypes

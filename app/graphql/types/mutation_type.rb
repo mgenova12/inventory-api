@@ -7,5 +7,6 @@ module Types
     field :edit_distributor, mutation: Mutations::EditDistributor    
     field :delete_product, mutation: Mutations::DeleteProduct
     field :edit_product, mutation: Mutations::EditProduct
+    field :edit_prepped_product, mutation: Mutations::EditPreppedProduct
   end
 end

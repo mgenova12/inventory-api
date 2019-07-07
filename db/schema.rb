@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190622200533) do
+ActiveRecord::Schema.define(version: 20190630151612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20190622200533) do
     t.string   "unit_size"
     t.integer  "portion_size"
     t.decimal  "marked_up_price",    precision: 8, scale: 2
+    t.integer  "prepped_id"
   end
 
   create_table "store_types", force: :cascade do |t|
