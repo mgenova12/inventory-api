@@ -1,0 +1,2 @@
+class StoreGood < ApplicationRecord
+end
