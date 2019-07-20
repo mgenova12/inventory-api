@@ -9,5 +9,7 @@ module Types
     field :edit_product, mutation: Mutations::EditProduct
     field :edit_prepped_product, mutation: Mutations::EditPreppedProduct
     field :update_location_row_order, mutation: Mutations::UpdateLocationRowOrder
+    field :create_location, mutation: Mutations::CreateLocation
+    field :delete_location, mutation: Mutations::DeleteLocation
   end
 end

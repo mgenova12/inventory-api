@@ -38,10 +38,10 @@
 # StoreType.create(name: 'Prepcenter')
 
 # Add locations
-10.times do 
-  Location.create(
-    name: Faker::House.room,
-    store_id: [1,2].sample
-  )
-end
+# 10.times do 
+#   Location.create(
+#     name: Faker::House.room,
+#     store_id: [1,2].sample
+#   )
+# end
 
