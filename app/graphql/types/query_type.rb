@@ -11,5 +11,7 @@ module Types
     field :document_data, resolver: Queries::DocumentData
     field :locations, resolver: Queries::Locations
     field :get_store, resolver: Queries::GetStore
+    field :get_store_goods, resolver: Queries::GetStoreGoods
+    field :get_removed_store_goods, resolver: Queries::GetRemovedStoreGoods
   end
 end
