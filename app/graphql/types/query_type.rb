@@ -10,5 +10,6 @@ module Types
     field :count_bies, resolver: Queries::CountBies
     field :document_data, resolver: Queries::DocumentData
     field :locations, resolver: Queries::Locations
+    field :get_store, resolver: Queries::GetStore
   end
 end
