@@ -41,7 +41,7 @@
 10.times do 
   Location.create(
     name: Faker::House.room,
-    store_id: [29,30].sample
+    store_id: [1,2].sample
   )
 end
 
