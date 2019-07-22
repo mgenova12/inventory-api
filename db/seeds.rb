@@ -45,15 +45,15 @@
 #   )
 # end
 
-[50,51,52,53,54,55,56,57].each do |s|
-  StoreGood.create!(
-    store_id: [1,2].sample,
-    product_id: s,
-    location_id: [1,2,3,4].sample,
-    distributor_id: [5,6,7].sample,
-    max_amount: rand(1..15)
-  )
-end
+# [50,51,52,53,54,55,56,57].each do |s|
+#   StoreGood.create!(
+#     store_id: [1,2].sample,
+#     product_id: s,
+#     location_id: [1,2,3,4].sample,
+#     distributor_id: [5,6,7].sample,
+#     max_amount: rand(1..15)
+#   )
+# end
 
 # Product.left_outer_joins(:store_goods).where.not( store_goods: { store_id: 29 })
 

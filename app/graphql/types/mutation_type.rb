@@ -11,5 +11,6 @@ module Types
     field :update_location_row_order, mutation: Mutations::UpdateLocationRowOrder
     field :create_location, mutation: Mutations::CreateLocation
     field :delete_location, mutation: Mutations::DeleteLocation
+    field :create_store_good, mutation: Mutations::CreateStoreGood
   end
 end
