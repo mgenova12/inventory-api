@@ -3,4 +3,5 @@ class StoreGood < ApplicationRecord
   belongs_to :product
   belongs_to :location
   belongs_to :distributor
+  belongs_to :count_by
 end

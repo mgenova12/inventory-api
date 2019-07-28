@@ -4,10 +4,10 @@ module Queries
     
     description 'Find all Store Goods'
 
-    type [Types::ProductType], null: false
+    type [Types::StoreGoodType], null: false
 
     def resolve(id:)
-      Store.find(id).products
+      StoreGood.where(store_id: id)
     end
   end
 

@@ -5,6 +5,7 @@ module Types
     field :product, ProductType, null: true
     field :location, LocationType, null: true
     field :distributor, DistributorType, null: true
+    field :count_by, CountByType, null: true
     field :max_amount, String, null: true
     field :replenish_by_each, Boolean, null: true
     field :delivery_day, String, null: true
