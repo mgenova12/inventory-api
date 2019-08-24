@@ -27,9 +27,9 @@ Product.all.destroy_all
   price = rand(0.1...100.0).round(2)
   mark_up = rand(1..15)
   marked_up_price =  price + (price * (mark_up * 0.01))
-
+  dish = Faker::Food.dish
   product = Product.new(
-    name:Faker::Food.dish, 
+    name: dish, 
     prepped: false,
     distributor_id: Distributor.all.ids.sample,
     category_id: Category.all.ids.sample, 
@@ -49,7 +49,7 @@ Product.all.destroy_all
     prepped_mark_up = rand(0..40)
     prepped_marked_up_price = product.price + ((product.price / portion_size) * (prepped_mark_up * 0.01)) 
     p_product = Product.new(
-      name: "Prepped #{Faker::Food.dish}",
+      name: "Prepped #{dish}",
       prepped: true,
       category_id: Category.all.ids.sample, 
       case_quantity: rand(0..20),

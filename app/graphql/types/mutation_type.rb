@@ -5,6 +5,7 @@ module Types
     field :create_product, mutation: Mutations::CreateProduct
     field :create_location, mutation: Mutations::CreateLocation
     field :create_store_good, mutation: Mutations::CreateStoreGood
+    field :create_inventory, mutation: Mutations::CreateInventory
     
     field :delete_distributor, mutation: Mutations::DeleteDistributor
     field :delete_product, mutation: Mutations::DeleteProduct
