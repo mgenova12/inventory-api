@@ -4,4 +4,5 @@ class Store < ApplicationRecord
   has_many :store_goods
   has_many :products, through: :store_goods
   has_many :inventories
+  has_many :orders
 end

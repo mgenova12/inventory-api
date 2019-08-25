@@ -14,5 +14,6 @@ module Types
     field :get_store_goods, resolver: Queries::GetStoreGoods
     field :get_removed_store_goods, resolver: Queries::GetRemovedStoreGoods
     field :get_inventory, resolver: Queries::GetInventory
+    field :get_store_inventory, resolver: Queries::GetStoreInventory
   end
 end

@@ -7,7 +7,7 @@ module Queries
     type [Types::InventoryPendingType], null: false
 
     def resolve(store_id:)
-      Location.where(store_id: store_id)
+      Location.where(store_id: store_id).order(:row_order)
     end
   end
 
