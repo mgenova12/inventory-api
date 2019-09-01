@@ -16,6 +16,7 @@ module Types
     field :edit_product, mutation: Mutations::EditProduct
     field :edit_prepped_product, mutation: Mutations::EditPreppedProduct
     field :edit_store_good, mutation: Mutations::EditStoreGood
+    field :edit_inventory, mutation: Mutations::EditInventory
 
     field :update_location_row_order, mutation: Mutations::UpdateLocationRowOrder
     
