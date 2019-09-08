@@ -17,6 +17,7 @@ class Mutations::EditStoreGood < Mutations::BaseMutation
     location_id = Location.find_by(name: location).id
     count_by_id = CountBy.find_by(name: count_by).id
 
+    
     if store_good.update(
         product_id: product_id,
         location_id: location_id, 

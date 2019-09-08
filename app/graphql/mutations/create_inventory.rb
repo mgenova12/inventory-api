@@ -5,8 +5,8 @@ class Mutations::CreateInventory < Mutations::BaseMutation
   field :inventory, [Types::InventoryType], null: true
   field :errors, [String], null: false
 
-  def resolve(store_id:, delivery_day:)
-    store_goods = Store.find(store_id).store_goods
+  def resolve(store_id:, delivery_day:) 
+    store_goods = Store.find(store_id).store_goods.where(delivery_day: [delivery_day, "Both"])
 
     order = Order.create!(store_id: store_id, delivery_day: delivery_day, status: 'incomplete')
 
