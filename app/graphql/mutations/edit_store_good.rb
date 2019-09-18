@@ -3,14 +3,14 @@ class Mutations::EditStoreGood < Mutations::BaseMutation
   argument :location, String, required: true
   argument :distributor, String, required: true
   argument :max_amount, Integer, required: true
-  argument :replenish_by_each, Boolean, required: true
+  argument :replenish_by, String, required: true
   argument :count_by, String, required: true
   argument :delivery_day, String, required: true
 
   field :store_good, Types::StoreGoodType, null: false
   field :errors, [String], null: false
 
-  def resolve(id:, location:, distributor:, max_amount:, replenish_by_each:, count_by:, delivery_day:)
+  def resolve(id:, location:, distributor:, max_amount:, replenish_by:, count_by:, delivery_day:)
     store_good = StoreGood.find(id)
     product_id = store_good.product.id
     distributor_id = Distributor.find_by(name: distributor).id
@@ -23,7 +23,7 @@ class Mutations::EditStoreGood < Mutations::BaseMutation
         location_id: location_id, 
         distributor_id: distributor_id,
         max_amount: max_amount,
-        replenish_by_each: replenish_by_each,
+        replenish_by: replenish_by,
         count_by_id: count_by_id,
         delivery_day: delivery_day
       )

@@ -7,7 +7,7 @@ module Types
     field :distributor, DistributorType, null: true
     field :count_by, CountByType, null: true
     field :max_amount, String, null: true
-    field :replenish_by_each, Boolean, null: true
+    field :replenish_by, String, null: true
     field :delivery_day, String, null: true
   end
 end

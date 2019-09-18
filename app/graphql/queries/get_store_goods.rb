@@ -7,7 +7,7 @@ module Queries
     type [Types::StoreGoodType], null: false
 
     def resolve(id:)
-      StoreGood.where(store_id: id)
+      StoreGood.where(store_id: id).order(:id)
     end
   end
 
