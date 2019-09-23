@@ -7,8 +7,8 @@ module Queries
     type [Types::OrderType], null: false
 
     def resolve(store_id:)
-
-      Order.all.reverse
+      Order.where(store_id: store_id).reverse
     end
+    
   end
 end
