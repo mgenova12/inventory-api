@@ -10,6 +10,7 @@ class Mutations::EditInventoryQuantityNeeded < Mutations::BaseMutation
     Order.find(order_id).update(status: 'pending')
     
     inventories.each do |inventory|
+      inventory.store_good.update(amount_in_stock: inventory.quantity)
       if inventory.store_good.count_by.name == '%'
         inventory.quantity <= 25 ? inventory.update(quantity_needed: 1, status: 'complete') : inventory.update(quantity_needed: 0, status: 'complete')
       elsif inventory.store_good.product.case_quantity && inventory.store_good.product.case_quantity > 0 && inventory.store_good.count_by.name == 'EA' && inventory.store_good.replenish_by == 'CASE'

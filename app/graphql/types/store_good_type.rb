@@ -9,5 +9,6 @@ module Types
     field :max_amount, String, null: true
     field :replenish_by, String, null: true
     field :delivery_day, String, null: true
+    field :amount_in_stock, Integer, null: true
   end
 end

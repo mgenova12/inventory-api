@@ -6,11 +6,12 @@ class Mutations::EditStoreGood < Mutations::BaseMutation
   argument :replenish_by, String, required: true
   argument :count_by, String, required: true
   argument :delivery_day, String, required: true
+  argument :amount_in_stock, Integer, required: true
 
   field :store_good, Types::StoreGoodType, null: false
   field :errors, [String], null: false
 
-  def resolve(id:, location:, distributor:, max_amount:, replenish_by:, count_by:, delivery_day:)
+  def resolve(id:, location:, distributor:, max_amount:, replenish_by:, count_by:, delivery_day:, amount_in_stock:)
     store_good = StoreGood.find(id)
     product_id = store_good.product.id
     distributor_id = Distributor.find_by(name: distributor).id
@@ -25,7 +26,8 @@ class Mutations::EditStoreGood < Mutations::BaseMutation
         max_amount: max_amount,
         replenish_by: replenish_by,
         count_by_id: count_by_id,
-        delivery_day: delivery_day
+        delivery_day: delivery_day,
+        amount_in_stock: amount_in_stock
       )
       # Successful creation, return the created object with no errors
       {
