@@ -20,6 +20,7 @@ module Types
     field :edit_inventory_quantity_needed, mutation: Mutations::EditInventoryQuantityNeeded
 
     field :update_location_row_order, mutation: Mutations::UpdateLocationRowOrder
+    field :update_amount_in_stock, mutation: Mutations::UpdateAmountInStock
     
   end
 end
