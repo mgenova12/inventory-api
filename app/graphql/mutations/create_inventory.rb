@@ -6,19 +6,33 @@ class Mutations::CreateInventory < Mutations::BaseMutation
   field :errors, [String], null: false
 
   def resolve(store_id:, delivery_day:) 
-    store_goods = Store.find(store_id).store_goods.where(delivery_day: [delivery_day, "Both"])
-
+    store_type = Store.find(store_id).store_type.name
+    store_goods = Store.find(store_id).store_goods
     order = Order.create!(store_id: store_id, delivery_day: delivery_day, status: 'incomplete')
 
+    #add row_order to store_good for row order in inventory
     store_goods.each do |store_good|
-      #add row_order to store_good for row order in inventory
-      Inventory.create!(
-        store_good_id: store_good.id, 
-        status: 'pending', 
-        store_id: store_id, 
-        location_id: store_good.location_id,
-        order_id: order.id
-      )
+      if store_type === 'Prepcenter'
+        if store_good.product.prepped.to_s == delivery_day
+          Inventory.create!(
+            store_good_id: store_good.id, 
+            status: 'pending', 
+            store_id: store_id, 
+            location_id: store_good.location_id,
+            order_id: order.id
+          )
+        end
+      else
+        if store_good.delivery_day == delivery_day || store_good.delivery_day == 'Both'
+          Inventory.create!(
+            store_good_id: store_good.id, 
+            status: 'pending', 
+            store_id: store_id, 
+            location_id: store_good.location_id,
+            order_id: order.id
+          )
+        end
+      end
     end
 
     {

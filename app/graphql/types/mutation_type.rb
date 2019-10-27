@@ -11,6 +11,7 @@ module Types
     field :delete_product, mutation: Mutations::DeleteProduct
     field :delete_location, mutation: Mutations::DeleteLocation
     field :delete_store_good, mutation: Mutations::DeleteStoreGood
+    field :delete_inventory, mutation: Mutations::DeleteInventory
     
     field :edit_distributor, mutation: Mutations::EditDistributor    
     field :edit_product, mutation: Mutations::EditProduct
