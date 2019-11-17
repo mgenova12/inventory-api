@@ -7,11 +7,12 @@ class Mutations::CreateStoreGood < Mutations::BaseMutation
   argument :replenish_by, String, required: true
   argument :delivery_day, String, required: true
   argument :count_by_id, Integer, required: true
+  argument :container_type_id, Integer, required: true
 
   field :store_good, Types::StoreGoodType, null: false
   field :errors, [String], null: false
 
-  def resolve(store_id:, product_id:, location_id:, distributor_id:, max_amount:, replenish_by:, delivery_day:, count_by_id:)
+  def resolve(store_id:, product_id:, location_id:, distributor_id:, max_amount:, replenish_by:, delivery_day:, count_by_id:, container_type_id:)
     store_good = StoreGood.new(
       store_id: store_id, 
       product_id: product_id,
@@ -20,7 +21,8 @@ class Mutations::CreateStoreGood < Mutations::BaseMutation
       max_amount: max_amount,
       replenish_by: replenish_by,
       delivery_day: delivery_day,
-      count_by_id: count_by_id
+      count_by_id: count_by_id,
+      container_type_id: container_type_id
     )
 
     if store_good.save

@@ -10,5 +10,6 @@ module Types
     field :replenish_by, String, null: true
     field :delivery_day, String, null: true
     field :amount_in_stock, Integer, null: true
+    field :container_type, Integer, null: true
   end
 end

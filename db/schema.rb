@@ -10,12 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191103235223) do
+ActiveRecord::Schema.define(version: 20191117163254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "container_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -104,6 +110,7 @@ ActiveRecord::Schema.define(version: 20191103235223) do
     t.integer  "count_by_id"
     t.string   "replenish_by"
     t.integer  "amount_in_stock"
+    t.integer  "container_type_id"
   end
 
   create_table "store_types", force: :cascade do |t|
