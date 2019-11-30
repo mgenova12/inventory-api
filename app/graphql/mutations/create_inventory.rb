@@ -12,7 +12,7 @@ class Mutations::CreateInventory < Mutations::BaseMutation
 
     #add row_order to store_good for row order in inventory
     store_goods.each do |store_good|
-      if store_type === 'Prepcenter'
+      if store_type == 'Prepcenter'
         if store_good.product.prepped.to_s == delivery_day
           Inventory.create!(
             store_good_id: store_good.id, 

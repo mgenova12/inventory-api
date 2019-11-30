@@ -8,7 +8,7 @@ module Queries
     type [Types::InventoryType], null: false
 
     def resolve(store_id:, order_id:)
-      Inventory.where(order_id: order_id, store_id: store_id)
+      Inventory.where(order_id: order_id, store_id: store_id).order(:created_at)
     end
   end
 
