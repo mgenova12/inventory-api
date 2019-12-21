@@ -19,6 +19,7 @@ module Types
     field :get_inventory_order, resolver: Queries::GetInventoryOrder
     field :store_orders, resolver: Queries::StoreOrders
     field :container_types, resolver: Queries::ContainerTypes
+    field :get_store_good, resolver: Queries::GetStoreGood
 
   end
 end
