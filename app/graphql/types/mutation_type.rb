@@ -22,6 +22,7 @@ module Types
 
     field :update_location_row_order, mutation: Mutations::UpdateLocationRowOrder
     field :update_amount_in_stock, mutation: Mutations::UpdateAmountInStock
+    field :update_scanned, mutation: Mutations::UpdateScanned
     
   end
 end
