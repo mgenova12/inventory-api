@@ -23,6 +23,14 @@ module Types
     field :update_location_row_order, mutation: Mutations::UpdateLocationRowOrder
     field :update_amount_in_stock, mutation: Mutations::UpdateAmountInStock
     field :update_scanned, mutation: Mutations::UpdateScanned
+    field :update_reason_code, mutation: Mutations::UpdateReasonCode
     
   end
 end
+
+# MutationType = GraphQL::ObjectType.define do
+#   name 'Mutation'
+  
+#   field :updateInventory, field: InventoryMutations::Update.field
+
+# end

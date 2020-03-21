@@ -8,5 +8,6 @@ module Types
     field :scanned, Boolean, null: true
     field :store_good, StoreGoodType, null: true
     field :store, StoreType, null: true
+    field :reason_code, String, null: true
   end
 end
