@@ -12,7 +12,7 @@ class Mutations::CreateStoreGood < Mutations::BaseMutation
   field :store_good, Types::StoreGoodType, null: false
   field :errors, [String], null: false
 
-  def resolve(store_id:, product_id:, location_id:, distributor_id:, max_amount:, replenish_by:, delivery_day:, count_by_id:, container_type_id:)
+  def resolve(store_id:, product_id:, location_id:, distributor_id:, count_by_id:, max_amount:, replenish_by:, delivery_day:, container_type_id:)
     store_good = StoreGood.new(
       store_id: store_id, 
       product_id: product_id,

@@ -20,7 +20,7 @@ class Mutations::CreateInventory < Mutations::BaseMutation
     if ['true', 'false'].include?(delivery_day)
       order = Order.create!(store_id: store_id, delivery_day: delivery_day, status: 'incomplete')
     elsif StoreOrder.last.nil? || StoreOrder.last&.orders_complete == StoreType.find_by(name:'Restaurant').stores.size
-      store_order = StoreOrder.create!(delivery_date: delivery_date, orders_complete: 1)
+      store_order = StoreOrder.create!(delivery_date: delivery_date, status:'Prepping', orders_complete: 1)
       order = Order.create!(store_id: store_id, delivery_day: delivery_day, status: 'incomplete', store_order_id: store_order.id)
     else 
       store_order = StoreOrder.last
