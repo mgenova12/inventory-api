@@ -18,5 +18,6 @@ module Types
     field :marked_up_price, Float, null: true
     field :aisle_number, Integer, null: true
     field :days_till_expire, Integer, null: true
+    field :p_id, Integer, null: true
   end
 end
