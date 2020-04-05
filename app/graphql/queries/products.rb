@@ -6,7 +6,7 @@ module Queries
     type [Types::ProductType], null: false
 
     def resolve
-      Product.where(prepped: false).order("created_at DESC")
+      Product.where(prepped: false).order(:name)
     end
   end
 

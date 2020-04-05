@@ -7,15 +7,16 @@ class Mutations::EditProduct < Mutations::BaseMutation
   argument :price, Float, required: true
   argument :mark_up, Integer, required: true
   argument :prepped, Boolean, required: false
-  argument :marked_up_price, Float, required: false
 
   field :product, Types::ProductType, null: false
   field :errors, [String], null: false
 
-  def resolve(id:, name:, distributor:, category:, case_quantity:, price:, mark_up:, prepped:, marked_up_price:)
+  def resolve(id:, name:, distributor:, category:, case_quantity:, price:, mark_up:, prepped:)
     product = Product.find(id)
     distributor_id = Distributor.find_by(name: distributor).id
     category_id = Category.find_by(name: category).id
+    
+    marked_up_price = price + (price * (mark_up * 0.01))
 
     if product.update(
       name: name,

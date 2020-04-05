@@ -15,7 +15,7 @@ class Mutations::UpdateFinalInventoryOrder < Mutations::BaseMutation
 
     sale_total = 0
     order.inventories.where(scanned: true).each do |inventory|
-      if inventory.store_good.distributor.name == 'Trappe'
+      if inventory.store_good.distributor.name.downcase == 'trappe'
         sale_total += inventory.store_good.product.price
       end
     end 

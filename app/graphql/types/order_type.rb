@@ -8,5 +8,6 @@ module Types
     field :status, String, null: true
     field :sale_total, Float, null: true
     field :inventories, [InventoryType], null: true
+    field :paid, Boolean, null: true
   end
 end
