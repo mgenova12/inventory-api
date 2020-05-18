@@ -6,7 +6,7 @@ class Mutations::EditStoreGood < Mutations::BaseMutation
   argument :replenish_by, String, required: true
   argument :count_by, String, required: true
   argument :delivery_day, String, required: true
-  argument :amount_in_stock, Integer, required: true
+  argument :amount_in_stock, Integer, required: false
 
   field :store_good, Types::StoreGoodType, null: false
   field :errors, [String], null: false
