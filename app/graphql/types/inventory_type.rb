@@ -9,5 +9,6 @@ module Types
     field :store_good, StoreGoodType, null: true
     field :store, StoreType, null: true
     field :reason_code, String, null: true
+    field :status, String, null: true
   end
 end
