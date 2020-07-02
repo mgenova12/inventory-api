@@ -20,5 +20,6 @@ module Types
     field :store_orders, resolver: Queries::StoreOrders
     field :container_types, resolver: Queries::ContainerTypes
     field :get_store_good, resolver: Queries::GetStoreGood
+    field :get_combinded, resolver: Queries::GetCombinded
   end
 end
