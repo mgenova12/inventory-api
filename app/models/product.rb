@@ -21,8 +21,6 @@ class Product < ApplicationRecord
       store_good = order.store.store_goods.find_by(product_id: product.id)
 
       if store_good
-        p store_good
-        p '44' * 50 
         inventory = order.inventories.find_by(store_good_id: store_good.id)
         needed = inventory&.quantity_needed || 0
         total += needed

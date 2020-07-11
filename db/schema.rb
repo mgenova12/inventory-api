@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200412181826) do
+ActiveRecord::Schema.define(version: 20200711201309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,14 +50,15 @@ ActiveRecord::Schema.define(version: 20200412181826) do
     t.integer  "order_id"
     t.integer  "quantity"
     t.integer  "quantity_needed"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "status"
     t.integer  "store_id"
     t.integer  "store_good_id"
     t.integer  "location_id"
     t.boolean  "scanned"
     t.string   "reason_code"
+    t.integer  "invoiced_quantity", default: 0
   end
 
   create_table "locations", force: :cascade do |t|
@@ -66,6 +67,12 @@ ActiveRecord::Schema.define(version: 20200412181826) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "row_order"
+  end
+
+  create_table "measurements", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -78,6 +85,12 @@ ActiveRecord::Schema.define(version: 20200412181826) do
     t.integer  "store_order_id"
     t.decimal  "sale_total"
     t.boolean  "paid"
+  end
+
+  create_table "product_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|

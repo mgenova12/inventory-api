@@ -10,7 +10,10 @@ class Mutations::UpdateScanned < Mutations::BaseMutation
     product_id = Product.find_by(barcode: barcode).id
     store_good_id = StoreGood.find_by(product_id: product_id, store_id: store_id).id
     inventory = Inventory.find_by(order_id: order_id, store_id: store_id, store_good_id: store_good_id)
-    inventory.update(scanned: true)
+    
+    quantity_needed = inventory.quantity_needed - 1
+    invoiced_quantity = inventory.invoiced_quantity + 1
+    inventory.update(scanned: true, quantity_needed: quantity_needed, invoiced_quantity: invoiced_quantity)
 
     {
       inventory: inventory,

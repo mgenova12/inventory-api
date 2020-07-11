@@ -10,5 +10,7 @@ module Types
     field :store, StoreType, null: true
     field :reason_code, String, null: true
     field :status, String, null: true
+    field :invoiced_quantity, Integer, null: true
+    
   end
 end
