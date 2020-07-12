@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   end
 
   post "/graphql", to: "graphql#execute"
-  
+
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  get '/logged_in', to: 'sessions#is_logged_in?'
+
+    
   root to: 'welcome#index'
 end

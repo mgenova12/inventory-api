@@ -25,6 +25,8 @@ module Types
     field :update_scanned, mutation: Mutations::UpdateScanned
     field :update_reason_code, mutation: Mutations::UpdateReasonCode
     field :update_final_inventory_order, mutation: Mutations::UpdateFinalInventoryOrder
+
+    field :sign_in_user, mutation: Mutations::SignInUser
     
   end
 end
