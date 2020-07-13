@@ -27,12 +27,12 @@ module InventoryApi
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    # config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
-    #   allow do
-    #     origins ENV['CLIENT_URL'] #replace this url with that of your own heroku client app
-    #     resource '*', :headers => :any, :methods => :any, :credentials => true
-    #   end
-    # end
+    config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
+      allow do
+        origins ENV['CLIENT_URL'] #replace this url with that of your own heroku client app
+        resource '*', :headers => :any, :methods => :any, :credentials => true
+      end
+    end
 
     config.api_only = true
   end

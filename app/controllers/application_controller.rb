@@ -4,12 +4,6 @@ class ApplicationController < ActionController::API
   protect_from_forgery unless: -> { request.format.json? }
   helper_method :login!, :logged_in?, :current_user, :authorized_user?, :logout!
   skip_before_action :verify_authenticity_token
-  after_action :set_access_control_headers
-  
-  def set_access_control_headers
-    headers['Access-Control-Allow-Origin'] = ENV['CLIENT_URL']
-    headers['Access-Control-Request-Method'] = '*'
-  end
 
   def login!
     crypt = ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base.byteslice(0..31))
