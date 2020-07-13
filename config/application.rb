@@ -27,7 +27,7 @@ module InventoryApi
     # Skip views, helpers and assets when generating a new resource.
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins ENV["CLIENT_URL"] #replace this url with that of your own heroku client app
+        origins ENV['CLIENT_URL'] #replace this url with that of your own heroku client app
         resource '*', :headers => :any, :methods => :any, :credentials => true
       end
     end
