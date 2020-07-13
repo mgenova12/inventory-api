@@ -17,6 +17,9 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 Dotenv::Railtie.load
 
+puts '$' * 100
+puts ENV['CLIENT_URL']
+puts '$' * 100
 module InventoryApi
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

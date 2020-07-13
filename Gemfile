@@ -18,7 +18,7 @@ gem 'puma', '~> 3.0'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'dotenv-rails'
 gem 'faker', github: 'stympy/faker'
 gem 'carrierwave'
 gem 'carrierwave-base64'
