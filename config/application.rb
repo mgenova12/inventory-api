@@ -17,9 +17,7 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 Dotenv::Railtie.load
 
-puts '$' * 100
-puts ENV['CLIENT_URL']
-puts '$' * 100
+
 module InventoryApi
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -32,7 +30,7 @@ module InventoryApi
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins ENV['CLIENT_URL'] #replace this url with that of your own heroku client app
-        resource '*', :headers => :any, :methods => :any, :credentials => true, expose: ['X-Requested-With', 'Content-Type', 'Accept']
+        resource '*', :headers => :any, :methods => :any, :credentials => true
       end
     end
 
