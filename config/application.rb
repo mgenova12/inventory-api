@@ -15,6 +15,7 @@ require "sprockets/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+Dotenv::Railtie.load
 
 module InventoryApi
   class Application < Rails::Application
@@ -28,7 +29,7 @@ module InventoryApi
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins ENV['CLIENT_URL'] #replace this url with that of your own heroku client app
-        resource '*', :headers => :any, :methods => :any, :credentials => true
+        resource '*', :headers => :any, :methods => :any, :credentials => true, expose: ['X-Requested-With', 'Content-Type', 'Accept']
       end
     end
 
