@@ -30,7 +30,7 @@ module InventoryApi
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
       allow do
         origins ENV['CLIENT_URL'] #replace this url with that of your own heroku client app
-        resource '*', :headers => :any, :methods => :any, :credentials => true
+        resource '*', :headers => :any, :methods => :any
       end
     end
 
