@@ -69,12 +69,6 @@ ActiveRecord::Schema.define(version: 20200712152341) do
     t.integer  "row_order"
   end
 
-  create_table "measurements", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "orders", force: :cascade do |t|
     t.string   "status"
     t.datetime "created_at",     null: false
@@ -85,12 +79,6 @@ ActiveRecord::Schema.define(version: 20200712152341) do
     t.integer  "store_order_id"
     t.decimal  "sale_total"
     t.boolean  "paid"
-  end
-
-  create_table "product_types", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|

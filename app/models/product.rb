@@ -27,7 +27,7 @@ class Product < ApplicationRecord
         details[:stores] << {order.store.name => needed}
       end 
         stock = store.store_goods.find_by(product_id: product.id).amount_in_stock
-        details['on_hand'] = stock
+        details['on_hand'] = stock || 0
     end
     details['total'] = total
     details['need'] = total - details['on_hand']
