@@ -12,5 +12,7 @@ module Types
     field :portion_size, Integer, null: true
     field :marked_up_price, Float, null: true
     field :p_id, Integer, null: true
+    field :brand, String, null: true
+    field :days_till_expire, Integer, null: true
   end
 end
